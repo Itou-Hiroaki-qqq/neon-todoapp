@@ -50,7 +50,7 @@ export default function TodoItem({ todo, onTodoUpdated, onTodoDeleted }: TodoIte
     try {
       const body: UpdateTodoInput = {
         title: title.trim(),
-        description: description.trim() || null,
+        description: description.trim() || undefined,
       }
 
       const response = await fetch(`/api/todos/${todo.id}`, {
